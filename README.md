@@ -1,4 +1,4 @@
-# LaTeX Version of "University Physics I:Classical Mechanics"
+# LaTeX Version of "Principles Of Mechanics"
 This repository contains the LaTeX source files for "Principles Of Mechanics" by Salma Alshareed.
 
 These files have been extracted from the original PDF textbook.
