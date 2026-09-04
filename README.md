@@ -38,33 +38,17 @@ The main entry points are:
 - [`images/`](images/) — EPUB-derived chapter figures
 - [`references.bib`](references.bib) — bibliography data
 
-The project currently targets MyST CLI 1.10.1. To preview it locally:
+## Build
 
 ```bash
-npm install -g mystmd@1.10.1
-myst start
+npm install
+npm run start          # preview
+npm run build          # static site in _build/html/
 ```
 
-To produce the static HTML build:
-
-```bash
-myst build --html
-```
-
-Generated output is written to `_build/` and is not committed.
-
-## Validate the conversion
-
-The repository includes a conversion-specific verifier:
-
-```bash
-python3 .opencode/skills/book-to-myst/scripts/verify_book.py . \
-  --outline outline.json
-```
-
-It checks figure paths, labels, math delimiters, source-count parity, and
-known extraction artifacts. A clean contribution should pass both the
-verifier and `myst build --html` without content warnings or errors.
+Generated output is written to `_build/` and is not committed. CI runs on
+pull requests (`.github/workflows/ci.yml`); pushes to `main` deploy via
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
 ## Legacy LaTeX edition
 
